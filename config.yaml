@@ -1,0 +1,40 @@
+requests: [
+    {
+        'method' : 'GET',
+        'url': 'https://google.com/',
+        'headers': {},
+        'body': None,
+    },
+    {
+        'method': 'POST',
+        'url': 'https://httpbin.org/post',
+        'headers': {'a': 'b'},
+        'body': '{"c": "d"}',
+    }
+]
+STAGES: [
+    {
+        'requests': requests,
+        'timeout': 5,
+        'duration': 10,
+        'rps_from': 1,
+        'rps_to': 100,
+        'repeats': 1,
+    },
+    {
+        'requests': requests,
+        'timeout': 10,
+        'duration': 10,
+        'rps_from': 100,
+        'rps_to': 100,
+        'repeats': 3,
+    },
+    {
+        'requests': requests,
+        'timeout': 5,
+        'duration': 10,
+        'rps_from': 100,
+        'rps_to': 10,
+        'repeats': 1,
+    },
+]
