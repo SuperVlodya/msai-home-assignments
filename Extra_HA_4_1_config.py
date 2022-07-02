@@ -9,8 +9,8 @@ import yaml
 
 class Config:
     def __init__(self):
-        with open('config.yaml', 'r') as f:
-            self._config = yaml.load(f, Loader=yaml.FullLoader)
+        with open('config.yaml', 'r') as file:
+            self._config = yaml.load(file, Loader=yaml.FullLoader)
         # print(self._config['requests'][0]['method'])
 
     @property
