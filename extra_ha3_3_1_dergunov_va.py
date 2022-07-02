@@ -11,6 +11,8 @@ import threading
 import random
 import time
 
+N = 5
+
 class Philosopher(threading.Thread):
     running = True  #used to check if everyone is finished eating
 
